@@ -6,26 +6,20 @@
   <title>iBeacon_Tutorial | Stupid Pencil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="iBeacon Tutorial
-記錄實作iBeacon 溝通的過程, Beacon分為 Peripheral(提供local資訊) &amp; Central(ex:App接收資訊並且用local push提醒使用者)使用情境以下記錄實作的細節
-Requirement
-BLE based on bluetooth 4.0. 可以在iOS5以上實作特別要注意的是在iOS8 必須在info.plis">
+記錄實作iBeacon 溝通的過程, Beacon分為 Peripheral(提供local資訊) &amp; Central(ex:App接收資訊並且用local push提醒使用者)使用情境以下記錄實作的細節">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iBeacon_Tutorial">
 <meta property="og:url" content="http://hsin919.github.io/2014/10/15/2014-10-15-ibeacon-tutorial/">
 <meta property="og:site_name" content="Stupid Pencil">
 <meta property="og:description" content="iBeacon Tutorial
-記錄實作iBeacon 溝通的過程, Beacon分為 Peripheral(提供local資訊) &amp; Central(ex:App接收資訊並且用local push提醒使用者)使用情境以下記錄實作的細節
-Requirement
-BLE based on bluetooth 4.0. 可以在iOS5以上實作特別要注意的是在iOS8 必須在info.plis">
+記錄實作iBeacon 溝通的過程, Beacon分為 Peripheral(提供local資訊) &amp; Central(ex:App接收資訊並且用local push提醒使用者)使用情境以下記錄實作的細節">
 <meta property="og:image" content="https://farm4.staticflickr.com/3956/15538688501_51ec621b16_z.jpg">
 <meta property="og:image" content="https://farm4.staticflickr.com/3956/15538688501_51ec621b16_z.jpg">
 <meta property="og:image" content="https://farm4.staticflickr.com/3950/14920624754_07e8e637ab_z.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iBeacon_Tutorial">
 <meta name="twitter:description" content="iBeacon Tutorial
-記錄實作iBeacon 溝通的過程, Beacon分為 Peripheral(提供local資訊) &amp; Central(ex:App接收資訊並且用local push提醒使用者)使用情境以下記錄實作的細節
-Requirement
-BLE based on bluetooth 4.0. 可以在iOS5以上實作特別要注意的是在iOS8 必須在info.plis">
+記錄實作iBeacon 溝通的過程, Beacon分為 Peripheral(提供local資訊) &amp; Central(ex:App接收資訊並且用local push提醒使用者)使用情境以下記錄實作的細節">
 <meta name="twitter:creator" content="@hsin919">
 <link rel="publisher" href="100115561238612870000">
 
@@ -64,10 +58,6 @@ ga('send', 'pageview');
       <h1 id="logo-wrap">
         <a href="/" id="logo">Stupid Pencil</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">筆記</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -123,6 +113,8 @@ ga('send', 'pageview');
       
         <h2 id="iBeacon_Tutorial">iBeacon Tutorial</h2>
 <p>記錄實作iBeacon 溝通的過程, Beacon分為 Peripheral(提供local資訊) &amp; Central(ex:App接收資訊並且用local push提醒使用者)<br><a href="https://www.youtube.com/watch?v=c3h0eKGfUfI" target="_blank" rel="external">使用情境</a><br>以下記錄實作的細節</p>
+<a id="more"></a>
+
 <h3 id="Requirement">Requirement</h3>
 <p>BLE based on bluetooth 4.0. 可以在iOS5以上實作<br>特別要注意的是在iOS8 必須在info.plist 加上key</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;NSLocationAlwaysUsageDescription&lt;/key]]&gt;&lt;string&gt;beacon testser&lt;/string]]&gt;</div></pre></td></tr></table></figure>
