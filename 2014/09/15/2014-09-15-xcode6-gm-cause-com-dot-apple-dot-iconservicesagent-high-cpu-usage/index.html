@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Xcode6 GM cause com.apple.IconServicesAgent high CPU usage | Stupid Pencil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="解決 Finder緩慢顯示檔案
+今天遇到Finder 顯示檔案很慢, 明明透過 terminal可以列出很多檔案, 但是透過Finder點選卻是空的資料夾在網路上找到很多相關解法, 關鍵字像是 com.apple.IconServicesAgent, cpu, Finder, com.apple.finder.plist, slow把找到的方法整理如下, 但是我的root cause 其實是跟xc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xcode6 GM cause com.apple.IconServicesAgent high CPU usage">
+<meta property="og:url" content="http://hsin919.github.io/2014/09/15/2014-09-15-xcode6-gm-cause-com-dot-apple-dot-iconservicesagent-high-cpu-usage/">
+<meta property="og:site_name" content="Stupid Pencil">
+<meta property="og:description" content="解決 Finder緩慢顯示檔案
+今天遇到Finder 顯示檔案很慢, 明明透過 terminal可以列出很多檔案, 但是透過Finder點選卻是空的資料夾在網路上找到很多相關解法, 關鍵字像是 com.apple.IconServicesAgent, cpu, Finder, com.apple.finder.plist, slow把找到的方法整理如下, 但是我的root cause 其實是跟xc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xcode6 GM cause com.apple.IconServicesAgent high CPU usage">
+<meta name="twitter:description" content="解決 Finder緩慢顯示檔案
+今天遇到Finder 顯示檔案很慢, 明明透過 terminal可以列出很多檔案, 但是透過Finder點選卻是空的資料夾在網路上找到很多相關解法, 關鍵字像是 com.apple.IconServicesAgent, cpu, Finder, com.apple.finder.plist, slow把找到的方法整理如下, 但是我的root cause 其實是跟xc">
+<meta name="twitter:creator" content="@hsin919">
+<link rel="publisher" href="100115561238612870000">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Stupid Pencil" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-53922154-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Stupid Pencil</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">筆記</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+		<a id="nav-github-link" class="nav-icon" href="https://github.com/hsin919"></a>
+		<a id="nav-linkedin-link" class="nav-icon" href="https://www.linkedin.com/pub/nathan-chang/74/852/985"></a>
+		<a id="nav-twitter-link" class="nav-icon" href="https://twitter.com/hsin919"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://hsin919.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2014-09-15-xcode6-gm-cause-com-dot-apple-dot-iconservicesagent-high-cpu-usage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/09/15/2014-09-15-xcode6-gm-cause-com-dot-apple-dot-iconservicesagent-high-cpu-usage/" class="article-date">
+  <time datetime="2014-09-15T13:33:04.000Z" itemprop="datePublished">Sep 15 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/xcode-mac-OS-X/">xcode, mac, OS X</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Xcode6 GM cause com.apple.IconServicesAgent high CPU usage
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="解決_Finder緩慢顯示檔案">解決 Finder緩慢顯示檔案</h2>
+<p>今天遇到Finder 顯示檔案很慢, 明明透過 terminal可以列出很多檔案, 但是透過Finder點選卻是空的資料夾<br>在網路上找到很多相關解法, 關鍵字像是 com.apple.IconServicesAgent, cpu, Finder, com.apple.finder.plist, slow<br>把找到的方法整理如下, 但是我的root cause 其實是跟xcode6 GM有關, 換回xcode5 問題就都消失了</p>
+<a id="more"></a>
+
+<h3 id="IconServicesAgent">IconServicesAgent</h3>
+<p>打開 Activity Monitor會發現檔案顯示不出來的時候 com.apple.IconServicesAgent usage 異常的高<br>可以透過 </p>
+<pre><code><span class="keyword">mkdir</span> <span class="variable">${TMPDIR}</span>/com.apple.IconServices
+</code></pre><p>解決</p>
+<h4 id="Reference">Reference</h4>
+<ul>
+<li><a href="http://kieranhealy.org/blog/archives/2014/01/07/an-issue-in-mavericks-with-com-dot-apple-dot-iconservicesagent/" target="_blank" rel="external">An issue in Mavericks with com.apple.IconServicesAgent</a></li>
+</ul>
+<h3 id="com-apple-finder-plist_重置">com.apple.finder.plist 重置</h3>
+<pre><code>rm ~/Library/Preferences/<span class="keyword">com</span>.apple.finder.plist&amp;killall Finder
+</code></pre><h4 id="Reference-1">Reference</h4>
+<ul>
+<li><a href="http://www.macx.cn/thread-2110962-1-1.html" target="_blank" rel="external">解决Mavericks下Finder运行缓慢/处理器占用高等问题</a></li>
+</ul>
+<h3 id="總結">總結</h3>
+<p>上述兩個問題的現象我都有觀察到, 也都做了 但是沒有解決問題<br>如果碰到類似問題  不妨重新安裝xcode 試試看</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hsin919.github.io/2014/09/15/2014-09-15-xcode6-gm-cause-com-dot-apple-dot-iconservicesagent-high-cpu-usage/" data-id="g0yep2sx7f2487nn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/15/2014-10-15-ibeacon-tutorial/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          iBeacon_Tutorial
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/02/2014-09-02-cocoapods/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">COCOAPODS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/How-to/">How-to</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/How-to-cocoapods/">How-to, cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS-BLE/">iOS, BLE</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/xcode-mac-OS-X/">xcode, mac, OS X</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/10/15/2014-10-15-ibeacon-tutorial/">iBeacon_Tutorial</a>
+          </li>
+        
+          <li>
+            <a href="/2014/09/15/2014-09-15-xcode6-gm-cause-com-dot-apple-dot-iconservicesagent-high-cpu-usage/">Xcode6 GM cause com.apple.IconServicesAgent high CPU usage</a>
+          </li>
+        
+          <li>
+            <a href="/2014/09/02/2014-09-02-cocoapods/">COCOAPODS</a>
+          </li>
+        
+          <li>
+            <a href="/2014/09/01/2014-09-01-install-octopress/">Install-Octopress</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 Nathan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
