@@ -3,17 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/1 | Stupid Pencil</title>
+  <title>Markdown Resume | Stupid Pencil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Stupid Pencil">
-<meta property="og:url" content="http://hsin919.github.io/archives/2015/01/">
+  <meta name="description" content="如何利用git與markdown撰寫履歷
+找工作的時候因為公司的需求不同常常會微調自己的履歷以求增加專長被注意的機會履歷一改再改  存了很多版本如果面試的過程發現可以補上什麼或者微調版面一一修改也非常麻煩剛好最近用markdown很夯(連柯P的市政白皮書都用gitbook寫了)為什麼履歷不也用版本控管呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown Resume">
+<meta property="og:url" content="http://hsin919.github.io/2015/02/04/Markdown-Resume/">
 <meta property="og:site_name" content="Stupid Pencil">
-<meta property="og:description">
+<meta property="og:description" content="如何利用git與markdown撰寫履歷
+找工作的時候因為公司的需求不同常常會微調自己的履歷以求增加專長被注意的機會履歷一改再改  存了很多版本如果面試的過程發現可以補上什麼或者微調版面一一修改也非常麻煩剛好最近用markdown很夯(連柯P的市政白皮書都用gitbook寫了)為什麼履歷不也用版本控管呢？">
+<meta property="og:image" content="https://farm9.staticflickr.com/8578/16255881787_250daee25c_z.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7451/16254388240_fb14189f38_z.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stupid Pencil">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Markdown Resume">
+<meta name="twitter:description" content="如何利用git與markdown撰寫履歷
+找工作的時候因為公司的需求不同常常會微調自己的履歷以求增加專長被注意的機會履歷一改再改  存了很多版本如果面試的過程發現可以補上什麼或者微調版面一一修改也非常麻煩剛好最近用markdown很夯(連柯P的市政白皮書都用gitbook寫了)為什麼履歷不也用版本控管呢？">
 <meta name="twitter:creator" content="@hsin919">
 <link rel="publisher" href="100115561238612870000">
 
@@ -79,12 +84,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-2015-01-11-Github-Project" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Markdown-Resume" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/01/11/2015-01-11-Github-Project/" class="article-date">
-  <time datetime="2015-01-11T14:04:31.000Z" itemprop="datePublished">Jan 11 2015</time>
+    <a href="/2015/02/04/Markdown-Resume/" class="article-date">
+  <time datetime="2015-02-04T06:43:47.000Z" itemprop="datePublished">Feb 4 2015</time>
 </a>
     
   </div>
@@ -94,8 +97,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/11/2015-01-11-Github-Project/">Github Project</a>
+    <h1 class="article-title" itemprop="name">
+      Markdown Resume
     </h1>
   
 
@@ -103,30 +106,70 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Summary">Summary</h2>
-<p>整理Github上相關project</p>
+        <h1 id="如何利用git與markdown撰寫履歷">如何利用git與markdown撰寫履歷</h1>
+<p>找工作的時候<br>因為公司的需求不同<br>常常會<code>微調</code>自己的履歷<br>以求增加專長被注意的機會<br>履歷一改再改  存了很多版本<br>如果面試的過程發現可以補上什麼或者微調版面<br>一一修改也非常麻煩<br>剛好最近用<code>markdown</code>很夯<br>(連柯P的市政白皮書都用<a href="https://www.gitbook.com/" target="_blank" rel="external">gitbook</a>寫了)<br>為什麼履歷不也用版本控管呢？</p>
+<a id="more"></a>
 
-        
-          <p class="article-more-link">
-            <a href="/2015/01/11/2015-01-11-Github-Project/#more">Read More</a>
-          </p>
-        
+<h2 id="Options">Options</h2>
+<p>稍微找了一下果然有很多人貢獻類似的工具<br>這邊紀錄一下使用的步驟與最後呈現的樣子<br>會需要點工程師基礎<br>下面是我覺得不錯的solution</p>
+<ul>
+<li><a href="https://github.com/mszep/pandoc_resume" target="_blank" rel="external">pandoc_resume</a></li>
+<li><a href="https://github.com/there4/markdown-resume" target="_blank" rel="external">markdown-resume</a></li>
+</ul>
+<h2 id="Steps_by_steps">Steps by steps</h2>
+<p>以下採用<a href="https://github.com/there4/markdown-resume" target="_blank" rel="external">markdown-resume</a>做舉例</p>
+<ol>
+<li>首先fork 上述任一個專案，並且clone to local，如此便建立好git的環境可做後續的修改</li>
+<li>改寫<code>examples/source/sample.md</code>成自己的資料並且做<code>git commit</code></li>
+<li>之後應徵不同公司的時候就利用<code>git branch</code>做版本管理</li>
+<li>最後修正好輸出pdf or html即可去路徑<code>./examples/output/</code>底下拿檔案寄出</li>
+</ol>
+<pre><code>.<span class="regexp">/bin/m</span>d2resume html examples<span class="regexp">/source/</span>sample.md examples<span class="regexp">/output/</span>
+.<span class="regexp">/bin/m</span>d2resume pdf examples<span class="regexp">/source/</span>sample.md examples<span class="regexp">/output/</span>
+</code></pre><h2 id="Template">Template</h2>
+<p>預設的版面可以透過參數<code>--template</code>修改</p>
+<pre><code>./bin/md2resume html --<span class="keyword">template</span> blockish examples/source/sample.md examples/output/`
+</code></pre><p>剛剛編輯的內容都不用修改<br>以下不同template的效果</p>
+<ul>
+<li>template moedern</li>
+</ul>
+<p><a href="https://www.flickr.com/photos/hsin919/16255881787" title="modern by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm9.staticflickr.com/8578/16255881787_250daee25c_z.jpg" width="640" height="494" alt="modern"></a></p>
+<ul>
+<li>template readable</li>
+</ul>
+<p><a href="https://www.flickr.com/photos/hsin919/16254388240" title="readable by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm8.staticflickr.com/7451/16254388240_fb14189f38_z.jpg" width="445" height="640" alt="readable"></a></p>
+<h2 id="Conclusion">Conclusion</h2>
+<p>總結一下優點</p>
+<ul>
+<li>版本控管不用擔心改壞</li>
+<li>markdown幫助我們專注於內容的編寫不用費神拉word檔的版面</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hsin919.github.io/2015/01/11/2015-01-11-Github-Project/" data-id="yueh917c9tvvzvmy" class="article-share-link">Share</a>
+      <a data-url="http://hsin919.github.io/2015/02/04/Markdown-Resume/" data-id="7bxpk04xn44q05uj" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-to-markdown-git/">How-to, markdown, git</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/01/11/2015-01-11-Github-Project/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Github Project</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-
-  
-  
 </section>
         
           <aside id="sidebar">
