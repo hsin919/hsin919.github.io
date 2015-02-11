@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015 | Stupid Pencil</title>
+  <title>Qt Animation | Stupid Pencil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Stupid Pencil">
-<meta property="og:url" content="http://hsin919.github.io/archives/2015/">
+  <meta name="description" content="Qt Animation
+利用QStateMachine 管理 QPropertyAnimationSample可以參考Sample code另外可以參考官方文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Qt Animation">
+<meta property="og:url" content="http://hsin919.github.io/2015/02/11/Qt-Animation/">
 <meta property="og:site_name" content="Stupid Pencil">
-<meta property="og:description">
+<meta property="og:description" content="Qt Animation
+利用QStateMachine 管理 QPropertyAnimationSample可以參考Sample code另外可以參考官方文件">
+<meta property="og:image" content="http://qt-project.org/doc/qt-4.8/images/statemachine-button.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stupid Pencil">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Qt Animation">
+<meta name="twitter:description" content="Qt Animation
+利用QStateMachine 管理 QPropertyAnimationSample可以參考Sample code另外可以參考官方文件">
 <meta name="twitter:creator" content="@hsin919">
 <link rel="publisher" href="100115561238612870000">
 
@@ -79,62 +83,7 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Add-TOC" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/11/Add-TOC/" class="article-date">
-  <time datetime="2015-02-11T02:02:19.000Z" itemprop="datePublished">Feb 11 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Programming/">Programming</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/11/Add-TOC/">Add TOC for markdown</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="TOC">TOC</h2>
-<p>This article introduce two ways that adding TOC  for markdown files.</p>
-<ul>
-<li><a href="http://stackoverflow.com/questions/9721944/automatic-toc-in-github-flavoured-markdown" target="_blank" rel="external">doctoc</a> </li>
-<li>Hexo TOC</li>
-</ul>
-
-        
-          <p class="article-more-link">
-            <a href="/2015/02/11/Add-TOC/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hsin919.github.io/2015/02/11/Add-TOC/" data-id="uzkfzaqmlxj6u7zr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-to/">How-to</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TOC/">TOC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Qt-Animation" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Qt-Animation" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/02/11/Qt-Animation/" class="article-date">
   <time datetime="2015-02-11T01:22:27.000Z" itemprop="datePublished">Feb 11 2015</time>
@@ -151,8 +100,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/11/Qt-Animation/">Qt Animation</a>
+    <h1 class="article-title" itemprop="name">
+      Qt Animation
     </h1>
   
 
@@ -160,14 +109,45 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
+	  
+	  <div id="toc" class="toc-article">
+	  	<strong class="toc-title"></strong>
+	  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Qt_Animation"><span class="toc-number">1.</span> <span class="toc-text">Qt Animation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#QStateMachine"><span class="toc-number">1.1.</span> <span class="toc-text">QStateMachine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QPropertyAnimation"><span class="toc-number">1.2.</span> <span class="toc-text">QPropertyAnimation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Key_Words"><span class="toc-number">2.</span> <span class="toc-text">Key Words</span></a></li></ol>
+	  </div>
+	  
         <h2 id="Qt_Animation">Qt Animation</h2>
 <p>利用QStateMachine 管理 QPropertyAnimation<br>Sample可以參考<a href="http://developer.nokia.com/community/wiki/Archived:Combining_Qt_Animation_and_State_Machine_Frameworks" target="_blank" rel="external">Sample code</a><br>另外可以參考<a href="http://qt-project.org/doc/qt-4.8/statemachine-api.html" target="_blank" rel="external">官方文件</a></p>
+<a id="more"></a>
 
-        
-          <p class="article-more-link">
-            <a href="/2015/02/11/Qt-Animation/#more">Read More</a>
-          </p>
-        
+<hr>
+<h3 id="QStateMachine">QStateMachine</h3>
+<p><img src="http://qt-project.org/doc/qt-4.8/images/statemachine-button.png" alt="QStateMachine"></p>
+<p>首先利用 <a href="http://qt-project.org/doc/qt-4.8/qstate.html#assignProperty" target="_blank" rel="external">QState::assignProperty</a> 設定想要的屬性 (ex:button title, geometry)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">machine = <span class="keyword">new</span> QStateMachine(this);</div><div class="line">QState *s1 = <span class="keyword">new</span> QState();</div><div class="line">s1<span class="variable">-&gt;assignProperty</span>(iButton, <span class="string">"text"</span>, <span class="string">"S1"</span>);</div><div class="line">QState *s2 = <span class="keyword">new</span> QState();</div><div class="line">s2<span class="variable">-&gt;assignProperty</span>(iButton, <span class="string">"text"</span>, <span class="string">"S2"</span>);</div><div class="line">QState *s3 = <span class="keyword">new</span> QState();</div><div class="line">s3<span class="variable">-&gt;assignProperty</span>(iButton, <span class="string">"text"</span>, <span class="string">"S3"</span>);</div></pre></td></tr></table></figure>
+
+<p>接著可利用 <a href="http://qt-project.org/doc/qt-4.8/qstate.html#addTransition-2" target="_blank" rel="external">QState::addTransition</a>做state machine間的切換</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">s1-&gt;<span class="function">addTransition</span>(iButton, <span class="function">SIGNAL</span>(<span class="function">clicked</span>()), s2);</div><div class="line">s2-&gt;<span class="function">addTransition</span>(iButton, <span class="function">SIGNAL</span>(<span class="function">clicked</span>()), s3);</div><div class="line">s3-&gt;<span class="function">addTransition</span>(iButton, <span class="function">SIGNAL</span>(<span class="function">clicked</span>()), s1);</div></pre></td></tr></table></figure>
+
+<p>然後很自然地把state加入state machine後就可start machine</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">machine-&gt;addState(s1);</div><div class="line">machine-&gt;addState(s2);</div><div class="line">machine-&gt;addState(s3);</div><div class="line">machine-&gt;setInitialState(s1);</div><div class="line">machine-&gt;start();</div></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="QPropertyAnimation">QPropertyAnimation</h3>
+<p>最後替QState之間加上動畫效果<br>可以如<a href="http://developer.nokia.com/community/wiki/Archived:Combining_Qt_Animation_and_State_Machine_Frameworks" target="_blank" rel="external">sample</a>connect QState signal跟animation行為</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">void StateMachineQt<span class="value">::<span class="function">animate2</span>()</span></div><div class="line">{</div><div class="line">    animation = new <span class="function">QPropertyAnimation</span>(iButton, <span class="string">"geometry"</span>);</div><div class="line">        <span class="attribute">animation</span>-&gt;<span class="function">setDuration</span>(5000);</div><div class="line">        <span class="attribute">animation</span>-&gt;<span class="function">setStartValue</span>(<span class="function">QRect</span>(310,135, iButton-&gt;<span class="function">width</span>(),iButton-&gt; <span class="function">height</span>()));</div><div class="line">        <span class="attribute">animation</span>-&gt;<span class="function">setEndValue</span>(<span class="function">QRect</span>(160,440, iButton-&gt;<span class="function">width</span>(),iButton-&gt;<span class="function">height</span>()));</div><div class="line">        <span class="attribute">animation</span>-&gt;<span class="function">setEasingCurve</span>(QEasingCurve<span class="value">::OutBounce);</span></div><div class="line"></div><div class="line">        <span class="attribute">animation</span>-&gt;<span class="function">start</span>();</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>也可以利用前面<code>s2-&gt;addTransition(iButton, SIGNAL(clicked()), s3);</code> return的<a href="http://doc.qt.io/qt-5/qsignaltransition.html" target="_blank" rel="external">QSignalTransition</a>做<a href="http://doc.qt.io/qt-5/qabstracttransition.html#addAnimation" target="_blank" rel="external">QSignalTransition::addAnimation</a>即可<br>其中可針對前面assign過的屬性new <a href="http://qt-project.org/doc/qt-4.8/qpropertyanimation.html" target="_blank" rel="external">QPropertyAnimation</a>做<a href="http://doc.qt.io/qt-5/qabstracttransition.html#addAnimation" target="_blank" rel="external">addAnimation</a><br>舉例如下</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s1<span class="variable">-&gt;assignProperty</span>(iButton, <span class="string">"pos"</span>, qpoint1);</div><div class="line">s2<span class="variable">-&gt;assignProperty</span>(iButton, <span class="string">"pos"</span>, qpoint2);</div><div class="line">QAbstractTransition *t =  s1<span class="variable">-&gt;addTransition</span>(iButton, SIGNAL(clicked()), s2);</div><div class="line">t<span class="variable">-&gt;addAnimation</span>(<span class="keyword">new</span> QPropertyAnimation(iButton, <span class="string">"pos"</span>));</div></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Key_Words">Key Words</h2>
+<ul>
+<li>QStateMachine</li>
+<li>QState</li>
+<li>QSignalTransition</li>
+<li>QPropertyAnimation</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -179,160 +159,29 @@ ga('send', 'pageview');
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Create-Private-Pod" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/09/Create-Private-Pod/" class="article-date">
-  <time datetime="2015-02-09T01:57:04.000Z" itemprop="datePublished">Feb 9 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Programming/">Programming</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2015/02/11/Add-TOC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          Add TOC for markdown
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/09/Create-Private-Pod/">Create Private Pod</a>
-    </h1>
   
+    <a href="/2015/02/09/Create-Private-Pod/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Create Private Pod</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Cocoapods">Cocoapods</h2>
-<p>cocoapods is a very useful tool which manage frameworks/package for xcode.</p>
-<p>People share lots of pods which can be found in the place as <a href="http://cocoapods.wantedly.com" target="_blank" rel="external">cocoapods search</a></p>
-<p>By <a href="http://hsin919.github.io/2014/09/02/cocoapods/" target="_blank" rel="external">creating podspec</a>, we can create our own pod to make module reuseable.<br>It’s also possible to publish your pod by using <code>pod trunk push POD_NAME.podspec</code>.<br>Only one line <code>pod &#39;POD_NAME&#39;</code> needed to be added in <code>podfile</code>, People can use your pod in their project.</p>
-
-        
-          <p class="article-more-link">
-            <a href="/2015/02/09/Create-Private-Pod/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hsin919.github.io/2015/02/09/Create-Private-Pod/" data-id="4ikr3s6mux7t4f5p" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-to/">How-to</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoapods/">cocoapods</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-Markdown-Resume" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/04/Markdown-Resume/" class="article-date">
-  <time datetime="2015-02-04T06:43:47.000Z" itemprop="datePublished">Feb 4 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tool/">tool</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/04/Markdown-Resume/">Markdown Resume</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="如何利用git與markdown撰寫履歷">如何利用git與markdown撰寫履歷</h1>
-<p>找工作的時候<br>因為公司的需求不同<br>常常會<code>微調</code>自己的履歷<br>以求增加專長被注意的機會<br>履歷一改再改  存了很多版本<br>如果面試的過程發現可以補上什麼或者微調版面<br>一一修改也非常麻煩<br>剛好最近用<code>markdown</code>很夯<br>(連柯P的市政白皮書都用<a href="https://www.gitbook.com/" target="_blank" rel="external">gitbook</a>寫了)<br>為什麼履歷不也用版本控管呢？</p>
-
-        
-          <p class="article-more-link">
-            <a href="/2015/02/04/Markdown-Resume/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hsin919.github.io/2015/02/04/Markdown-Resume/" data-id="qpxe0o81cj8p13pt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-to/">How-to</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Github_Project" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/11/Github_Project/" class="article-date">
-  <time datetime="2015-01-11T14:04:31.000Z" itemprop="datePublished">Jan 11 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Programming/">Programming</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/11/Github_Project/">Github Project</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Summary">Summary</h2>
-<p>整理Github上相關project</p>
-
-        
-          <p class="article-more-link">
-            <a href="/2015/01/11/Github_Project/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hsin919.github.io/2015/01/11/Github_Project/" data-id="44tvi4zvmo88bar6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
 </section>
         
           <aside id="sidebar">
