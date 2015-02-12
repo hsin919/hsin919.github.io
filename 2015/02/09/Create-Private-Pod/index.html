@@ -5,27 +5,34 @@
   
   <title>Create Private Pod | Stupid Pencil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Cocoapods
-cocoapods is a very useful tool which manage frameworks/package for xcode.
-People share lots of pods which can be found in the place as cocoapods search
-By creating podspec, we can create ou">
+  <meta name="description" content="This document shows two samples which are made under cocoapods version 0.36.0.beta.1
+
+testPrivatePod : A private pod with a universal library
+testUsePod : Project use private pod
+
+We will go though">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Create Private Pod">
 <meta property="og:url" content="http://hsin919.github.io/2015/02/09/Create-Private-Pod/">
 <meta property="og:site_name" content="Stupid Pencil">
-<meta property="og:description" content="Cocoapods
-cocoapods is a very useful tool which manage frameworks/package for xcode.
-People share lots of pods which can be found in the place as cocoapods search
-By creating podspec, we can create ou">
-<meta property="og:image" content="https://farm8.staticflickr.com/7395/16313133020_220c691c79_z.jpg">
+<meta property="og:description" content="This document shows two samples which are made under cocoapods version 0.36.0.beta.1
+
+testPrivatePod : A private pod with a universal library
+testUsePod : Project use private pod
+
+We will go though">
+<meta property="og:image" content="https://farm9.staticflickr.com/8633/16319653707_4fbd2f023c_z.jpg">
 <meta property="og:image" content="https://farm9.staticflickr.com/8619/16498838861_0f89d8f154_z.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7395/16313133020_220c691c79_z.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7354/16474576496_716554b266_z.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Create Private Pod">
-<meta name="twitter:description" content="Cocoapods
-cocoapods is a very useful tool which manage frameworks/package for xcode.
-People share lots of pods which can be found in the place as cocoapods search
-By creating podspec, we can create ou">
+<meta name="twitter:description" content="This document shows two samples which are made under cocoapods version 0.36.0.beta.1
+
+testPrivatePod : A private pod with a universal library
+testUsePod : Project use private pod
+
+We will go though">
 <meta name="twitter:creator" content="@hsin919">
 <link rel="publisher" href="100115561238612870000">
 
@@ -123,19 +130,7 @@ ga('send', 'pageview');
 	  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cocoapods"><span class="toc-number">1.</span> <span class="toc-text">Cocoapods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What_is_Private_Pod"><span class="toc-number">2.</span> <span class="toc-text">What is Private Pod</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How_to_Use_Private_pod_Created_By_Teammates"><span class="toc-number">3.</span> <span class="toc-text">How to Use Private pod Created By Teammates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_Private_pod_for_existing_universal_library"><span class="toc-number">4.</span> <span class="toc-text">Create Private pod for existing universal library</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_podspec"><span class="toc-number">4.1.</span> <span class="toc-text">Create podspec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Details_of_podspec"><span class="toc-number">4.2.</span> <span class="toc-text">Details of podspec</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update_LIB"><span class="toc-number">5.</span> <span class="toc-text">Update LIB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol>
 	  </div>
 	  
-        <h2 id="Cocoapods">Cocoapods</h2>
-<p>cocoapods is a very useful tool which manage frameworks/package for xcode.</p>
-<p>People share lots of pods which can be found in the place as <a href="http://cocoapods.wantedly.com" target="_blank" rel="external">cocoapods search</a></p>
-<p>By <a href="http://hsin919.github.io/2014/09/02/cocoapods/" target="_blank" rel="external">creating podspec</a>, we can create our own pod to make module reuseable.<br>It’s also possible to publish your pod by using <code>pod trunk push POD_NAME.podspec</code>.<br>Only one line <code>pod &#39;POD_NAME&#39;</code> needed to be added in <code>podfile</code>, People can use your pod in their project.</p>
-<a id="more"></a>
-
-<hr>
-<h2 id="What_is_Private_Pod">What is Private Pod</h2>
-<p>Image that we are using a large core library which is implemented for company inner usage in various projects. For example, a universal fat library named testPrivatePod.a.</p>
-<p><a href="https://github.com/hsin919/testPrivatePod/" target="_blank" rel="external">https://github.com/hsin919/testPrivatePod/</a></p>
-<p>Everytime the CI release a new build testPrivatePod need to be cloned to local machine. </p>
-<p>Private pod solve this problem.<br>cocoapods will check if there is any update for testPrivatePod.<br>The download will be triggered only if there is a new version.</p>
-<p>This document show two samples </p>
+        <p>This document shows two samples which are made under cocoapods version <code>0.36.0.beta.1</code></p>
 <ul>
 <li><a href="https://github.com/hsin919/testPrivatePod" target="_blank" rel="external">testPrivatePod</a> : A private pod with a universal library</li>
 <li><a href="https://github.com/hsin919/testUsePod" target="_blank" rel="external">testUsePod</a> : Project use private pod</li>
@@ -145,18 +140,29 @@ ga('send', 'pageview');
 <li>How to use private pod created by teammates</li>
 <li>How to create private pod for existing universal library</li>
 </ul>
+<a id="more"></a>
+
+<hr>
+<h2 id="Cocoapods">Cocoapods</h2>
+<p>cocoapods is a very useful tool which manage frameworks/package for xcode.</p>
+<p>People share lots of pods which can be found in the place as <a href="http://cocoapods.wantedly.com" target="_blank" rel="external">cocoapods search</a></p>
+<p>By <a href="http://hsin919.github.io/2014/09/02/cocoapods/" target="_blank" rel="external">creating podspec</a>, we can create our own pod to make module reuseable.<br>It’s also possible to publish your pod by using <code>pod trunk push POD_NAME.podspec</code>.<br>Only one line <code>pod &#39;POD_NAME&#39;</code> needed to be added in <code>podfile</code>, People can use your pod in their project.</p>
+<hr>
+<h2 id="What_is_Private_Pod">What is Private Pod</h2>
+<p>Image that we are using a large core library which is implemented for company inner usage in various projects. For example, an universal fat library named testPrivatePod.a.</p>
+<p><a href="https://github.com/hsin919/testPrivatePod/" target="_blank" rel="external">https://github.com/hsin919/testPrivatePod/</a></p>
+<p>Everytime the CI release a new build testPrivatePod need to be cloned to local machine. </p>
+<p>Private pod solve this problem.<br>cocoapods will check if there is any update for testPrivatePod.<br>The download will be triggered only if there is a new version.</p>
 <hr>
 <h2 id="How_to_Use_Private_pod_Created_By_Teammates">How to Use Private pod Created By Teammates</h2>
 <ol>
-<li>Add private pod to local. <code>pod repo add testPrivatePod https://github.com/hsin919/testPrivatePod.git</code></li>
+<li>Add private pod to local. <code>pod repo add testPrivatePod https://github.com/hsin919/testPrivatePod.git</code>.<br> You can double check if it’s success under <code>~/.cocoapods/repos/testPrivatePod</code>.<br><a href="https://www.flickr.com/photos/hsin919/16319653707" title="afteraddprivatepod by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm9.staticflickr.com/8633/16319653707_4fbd2f023c_z.jpg" width="640" height="92" alt="afteraddprivatepod"></a><br>The output will become as below if we skip this step.<br><a href="https://www.flickr.com/photos/hsin919/16498838861" title="No spec by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm9.staticflickr.com/8619/16498838861_0f89d8f154_z.jpg" width="566" height="52" alt="No spec"></a></li>
 <li>Add <code>pod &#39;testPrivatePod&#39;, :path =&gt; &#39;~/.cocoapods/repos/testPrivatePod&#39;</code> in podfile</li>
-<li><code>pod install</code>(first time) or <code>pod update</code> </li>
-<li>Now we are feel free to import <testprivatepod.h> </testprivatepod.h></li>
-</ol>
-<p><a href="https://www.flickr.com/photos/hsin919/16313133020" title="updateLib by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm8.staticflickr.com/7395/16313133020_220c691c79_z.jpg" width="560" height="149" alt="updateLib"></a></p>
-<p>The output above will become as below if we skip step 1.</p>
-<p><a href="https://www.flickr.com/photos/hsin919/16498838861" title="No spec by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm9.staticflickr.com/8619/16498838861_0f89d8f154_z.jpg" width="566" height="52" alt="No spec"></a></p>
+<li><code>pod install</code>(first time) or <code>pod update</code><br>We are good to go.<br><a href="https://www.flickr.com/photos/hsin919/16313133020" title="updateLib by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm8.staticflickr.com/7395/16313133020_220c691c79_z.jpg" width="560" height="149" alt="updateLib"></a></li>
+<li><p>Now we are feel free to import <testprivatepod.h> </testprivatepod.h></p>
 <hr>
+</li>
+</ol>
 <h2 id="Create_Private_pod_for_existing_universal_library">Create Private pod for existing universal library</h2>
 <p>Assume we got the .h .a files on <a href="https://github.com/hsin919/testPrivatePod" target="_blank" rel="external">https://github.com/hsin919/testPrivatePod</a> without the podspec file.</p>
 <h3 id="Create_podspec">Create podspec</h3>
@@ -165,11 +171,11 @@ ga('send', 'pageview');
 <p>Edit <code>.podspec</code> until there is no complain by <code>pod lib lint</code></p>
 <p><a href="https://www.flickr.com/photos/hsin919/16474576496" title="lib lint fail by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm8.staticflickr.com/7354/16474576496_716554b266_z.jpg" width="640" height="268" alt="lib lint fail"></a></p>
 <h3 id="Details_of_podspec">Details of podspec</h3>
-<ol>
+<ul>
 <li><code>s.source       = { :path =&gt; &#39;*.{h,a}&#39; }</code> Specify the location from where the source should be retrieved.</li>
 <li><code>s.source_files  = &quot;*.{h}&quot;</code> In the case of <a href="https://github.com/hsin919/testPrivatePod" target="_blank" rel="external">testPrivatePod</a> only <code>testPrivatePod.h</code> is source code.</li>
 <li><code>s.library   = &quot;testPrivatePod&quot;</code>,  <code>s.preserve_paths = &quot;libtestPrivatePod.a&quot;</code> and <code>s.xcconfig = { &#39;LIBRARY_SEARCH_PATHS&#39; =&gt; &#39;~/.cocoapods/repos/testPrivatePod&#39; }</code>make pod project settings link to corresponding library after <code>pod update</code></li>
-</ol>
+</ul>
 <hr>
 <h2 id="Update_LIB">Update LIB</h2>
 <p>Finally, let’s make a upgrade for our universal library.</p>
