@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="This document shows two samples which are made under cocoapods version 0.36.0.beta.1
 
-testPrivatePod : A private pod with a universal library
+testPrivatePod : A private pod with an universal library
 testUsePod : Project use private pod
 
 We will go though">
@@ -17,7 +17,7 @@ We will go though">
 <meta property="og:site_name" content="Stupid Pencil">
 <meta property="og:description" content="This document shows two samples which are made under cocoapods version 0.36.0.beta.1
 
-testPrivatePod : A private pod with a universal library
+testPrivatePod : A private pod with an universal library
 testUsePod : Project use private pod
 
 We will go though">
@@ -29,7 +29,7 @@ We will go though">
 <meta name="twitter:title" content="Create Private Pod">
 <meta name="twitter:description" content="This document shows two samples which are made under cocoapods version 0.36.0.beta.1
 
-testPrivatePod : A private pod with a universal library
+testPrivatePod : A private pod with an universal library
 testUsePod : Project use private pod
 
 We will go though">
@@ -127,12 +127,12 @@ ga('send', 'pageview');
 	  
 	  <div id="toc" class="toc-article">
 	  	<strong class="toc-title"></strong>
-	  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cocoapods"><span class="toc-number">1.</span> <span class="toc-text">Cocoapods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What_is_Private_Pod"><span class="toc-number">2.</span> <span class="toc-text">What is Private Pod</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How_to_Use_Private_pod_Created_By_Teammates"><span class="toc-number">3.</span> <span class="toc-text">How to Use Private pod Created By Teammates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_Private_pod_for_existing_universal_library"><span class="toc-number">4.</span> <span class="toc-text">Create Private pod for existing universal library</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_podspec"><span class="toc-number">4.1.</span> <span class="toc-text">Create podspec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Details_of_podspec"><span class="toc-number">4.2.</span> <span class="toc-text">Details of podspec</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update_LIB"><span class="toc-number">5.</span> <span class="toc-text">Update LIB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol>
+	  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cocoapods"><span class="toc-number">1.</span> <span class="toc-text">Cocoapods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What_is_Private_Pod"><span class="toc-number">2.</span> <span class="toc-text">What is Private Pod</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How_to_Use_Private_pod_Created_By_Teammates"><span class="toc-number">3.</span> <span class="toc-text">How to Use Private pod Created By Teammates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_Private_pod_for_existing_universal_library"><span class="toc-number">4.</span> <span class="toc-text">Create Private pod for existing universal library</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_podspec"><span class="toc-number">4.1.</span> <span class="toc-text">Create podspec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Details_of_podspec"><span class="toc-number">4.2.</span> <span class="toc-text">Details of podspec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Push_podspec_File"><span class="toc-number">4.3.</span> <span class="toc-text">Push podspec File</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update_LIB"><span class="toc-number">5.</span> <span class="toc-text">Update LIB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol>
 	  </div>
 	  
         <p>This document shows two samples which are made under cocoapods version <code>0.36.0.beta.1</code></p>
 <ul>
-<li><a href="https://github.com/hsin919/testPrivatePod" target="_blank" rel="external">testPrivatePod</a> : A private pod with a universal library</li>
+<li><a href="https://github.com/hsin919/testPrivatePod" target="_blank" rel="external">testPrivatePod</a> : A private pod with an universal library</li>
 <li><a href="https://github.com/hsin919/testUsePod" target="_blank" rel="external">testUsePod</a> : Project use private pod</li>
 </ul>
 <p>We will go though </p>
@@ -159,10 +159,11 @@ ga('send', 'pageview');
 <li>Add private pod to local. <code>pod repo add testPrivatePod https://github.com/hsin919/testPrivatePod.git</code>.<br> You can double check if it’s success under <code>~/.cocoapods/repos/testPrivatePod</code>.<br><a href="https://www.flickr.com/photos/hsin919/16319653707" title="afteraddprivatepod by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm9.staticflickr.com/8633/16319653707_4fbd2f023c_z.jpg" width="640" height="92" alt="afteraddprivatepod"></a><br>The output will become as below if we skip this step.<br><a href="https://www.flickr.com/photos/hsin919/16498838861" title="No spec by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm9.staticflickr.com/8619/16498838861_0f89d8f154_z.jpg" width="566" height="52" alt="No spec"></a></li>
 <li>Add <code>pod &#39;testPrivatePod&#39;, :path =&gt; &#39;~/.cocoapods/repos/testPrivatePod&#39;</code> in podfile</li>
 <li><code>pod install</code>(first time) or <code>pod update</code><br>We are good to go.<br><a href="https://www.flickr.com/photos/hsin919/16313133020" title="updateLib by hsin chang, on Flickr" target="_blank" rel="external"><img src="https://farm8.staticflickr.com/7395/16313133020_220c691c79_z.jpg" width="560" height="149" alt="updateLib"></a></li>
-<li><p>Now we are feel free to import <testprivatepod.h> </testprivatepod.h></p>
-<hr>
-</li>
+<li>Now we are feel free to import  <code>&lt;testPrivatePod.h&gt;</code></li>
 </ol>
+<p>If you need a local git system without push to any git repo.<br>Use <code>pod repo add testPrivatePod /FILE_PATH/testPrivatePod/testPrivatePodRelease</code> instead. </p>
+<p>In this way the private pods will reference to local copy. Only if you do a local git commit, the CI will copy the new files to private pods path. So you can still feel free to change anything before doing <code>git commit</code> with podspec file</p>
+<hr>
 <h2 id="Create_Private_pod_for_existing_universal_library">Create Private pod for existing universal library</h2>
 <p>Assume we got the .h .a files on <a href="https://github.com/hsin919/testPrivatePod" target="_blank" rel="external">https://github.com/hsin919/testPrivatePod</a> without the podspec file.</p>
 <h3 id="Create_podspec">Create podspec</h3>
@@ -176,9 +177,11 @@ ga('send', 'pageview');
 <li><code>s.source_files  = &quot;*.{h}&quot;</code> In the case of <a href="https://github.com/hsin919/testPrivatePod" target="_blank" rel="external">testPrivatePod</a> only <code>testPrivatePod.h</code> is source code.</li>
 <li><code>s.library   = &quot;testPrivatePod&quot;</code>,  <code>s.preserve_paths = &quot;libtestPrivatePod.a&quot;</code> and <code>s.xcconfig = { &#39;LIBRARY_SEARCH_PATHS&#39; =&gt; &#39;~/.cocoapods/repos/testPrivatePod&#39; }</code>make pod project settings link to corresponding library after <code>pod update</code></li>
 </ul>
+<h3 id="Push_podspec_File">Push podspec File</h3>
+<p>Push podspec to the place where teammates can access.<br>For example <a href="https://github.com/hsin919/testPrivatePod.git" target="_blank" rel="external">https://github.com/hsin919/testPrivatePod.git</a>.<br>In this way, they can use your pods as private pod though  <code>pod repo add testPrivatePod https://github.com/hsin919/testPrivatePod.git</code></p>
 <hr>
 <h2 id="Update_LIB">Update LIB</h2>
-<p>Finally, let’s make a upgrade for our universal library.</p>
+<p>Finally, let’s make an upgrade for our universal library.</p>
 <ol>
 <li>Add <code>+ (void)printTest;</code>  in <code>testPrivatePod.h</code> &amp;  <code>testPrivatePod.m</code></li>
 <li>Rebuild the project and replace <code>libtestPrivatePod.a</code> in <a href="https://github.com/hsin919/testPrivatePod" target="_blank" rel="external">testPrivatePod</a></li>
@@ -202,7 +205,7 @@ ga('send', 'pageview');
       <a data-url="http://hsin919.github.io/2015/02/09/Create-Private-Pod/" data-id="4ikr3s6mux7t4f5p" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-to/">How-to</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoapods/">cocoapods</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-to/">How-to</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PrivatePod/">PrivatePod</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoapods/">cocoapods</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sample/">sample</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcode/">xcode</a></li></ul>
 
     </footer>
   </div>
@@ -247,7 +250,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BLE/">BLE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/How-to/">How-to</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS-X/">OS X</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TOC/">TOC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/">cocoapods</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BLE/">BLE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/How-to/">How-to</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS-X/">OS X</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PrivatePod/">PrivatePod</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TOC/">TOC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/">cocoapods</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sample/">sample</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -256,7 +259,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/BLE/" style="font-size: 10.00px;">BLE</a><a href="/tags/How-to/" style="font-size: 20.00px;">How-to</a><a href="/tags/OS-X/" style="font-size: 10.00px;">OS X</a><a href="/tags/Qt/" style="font-size: 10.00px;">Qt</a><a href="/tags/TOC/" style="font-size: 10.00px;">TOC</a><a href="/tags/UI/" style="font-size: 10.00px;">UI</a><a href="/tags/cocoapods/" style="font-size: 15.00px;">cocoapods</a><a href="/tags/git/" style="font-size: 10.00px;">git</a><a href="/tags/github/" style="font-size: 10.00px;">github</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/iOS/" style="font-size: 10.00px;">iOS</a><a href="/tags/mac/" style="font-size: 10.00px;">mac</a><a href="/tags/markdown/" style="font-size: 15.00px;">markdown</a><a href="/tags/xcode/" style="font-size: 10.00px;">xcode</a>
+      <a href="/tags/BLE/" style="font-size: 10.00px;">BLE</a><a href="/tags/How-to/" style="font-size: 20.00px;">How-to</a><a href="/tags/OS-X/" style="font-size: 10.00px;">OS X</a><a href="/tags/PrivatePod/" style="font-size: 10.00px;">PrivatePod</a><a href="/tags/Qt/" style="font-size: 10.00px;">Qt</a><a href="/tags/TOC/" style="font-size: 10.00px;">TOC</a><a href="/tags/UI/" style="font-size: 10.00px;">UI</a><a href="/tags/cocoapods/" style="font-size: 15.00px;">cocoapods</a><a href="/tags/git/" style="font-size: 10.00px;">git</a><a href="/tags/github/" style="font-size: 10.00px;">github</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/iOS/" style="font-size: 10.00px;">iOS</a><a href="/tags/mac/" style="font-size: 10.00px;">mac</a><a href="/tags/markdown/" style="font-size: 15.00px;">markdown</a><a href="/tags/sample/" style="font-size: 10.00px;">sample</a><a href="/tags/xcode/" style="font-size: 15.00px;">xcode</a>
     </div>
   </div>
 
